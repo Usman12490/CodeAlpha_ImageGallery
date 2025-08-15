@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="gallery-container">
+        <div class="gallery-header">
+            <h1 class="gallery-title">Modern Gallery</h1>
+            <p class="gallery-subtitle">Add, organize and discover amazing photography</p>
+        </div>
+
+        <!-- Add Image Section -->
+        <div class="add-image-section">
+            <h3 class="add-image-title">Add New Image</h3>
+            <form class="add-image-form" id="addImageForm">
+                <div class="form-group">
+                    <label for="imageUrl">Image URL</label>
+                    <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg" required>
+                </div>
+                <div class="form-group">
+                    <label for="imageCategory">Category</label>
+                    <select id="imageCategory" required>
+                        <option value="">Select category</option>
+                        <option value="nature">Nature</option>
+                        <option value="architecture">Architecture</option>
+                        <option value="abstract">Abstract</option>
+                        <option value="portraits">Portraits</option>
+                    </select>
+                </div>
+                <button type="submit" class="add-btn">Add Image</button>
+                
+                <div class="file-upload-area" id="fileUploadArea">
+                    <div class="upload-icon">📷</div>
+                    <div class="upload-text">Click here or drag & drop image files</div>
+                    <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
+                </div>
+            </form>
+        </div>
+
+        <div class="filter-controls">
+            <button class="filter-btn active" data-filter="all">All (<span id="countAll">0</span>)</button>
+            <button class="filter-btn" data-filter="nature">Nature (<span id="countNature">0</span>)</button>
+            <button class="filter-btn" data-filter="architecture">Architecture (<span id="countArchitecture">0</span>)</button>
+            <button class="filter-btn" data-filter="abstract">Abstract (<span id="countAbstract">0</span>)</button>
+            <button class="filter-btn" data-filter="portraits">Portraits (<span id="countPortraits">0</span>)</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <img class="lightbox-image" id="lightboxImage" src="" alt="">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#8249;</button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">&#8250;</button>
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+        </div>
+    </div>
+  <script src="script.js"></script>
+  
+</body>
+</html>
